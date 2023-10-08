@@ -1,8 +1,8 @@
 "use client"
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react"
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
+import { toast } from "react-toastify"; 
 
 
 const Login = () => {
@@ -12,6 +12,8 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
+
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     if(!email) return toast.error("Email is required")
@@ -20,7 +22,17 @@ const Login = () => {
     try{
       setLoading(true);
 
-      
+      signIn("credentials", {
+        email, password,
+        redirect: false
+      }).then(({ ok, error}:any) => {
+        if(ok){
+          router.push('/admin')
+        }else{
+          console.log(error)
+          toast.error("Invalid Credentials");
+        }
+      })
 
       setLoading(false);
     }catch(error){
@@ -32,7 +44,6 @@ const Login = () => {
 
   return (
     <main className=" px-[9%] max-lg:px-[4%] py-5 pt-24 mt-10">
-      <ToastContainer/>
       
       <section className='max-w-[450px] w-full mx-auto'>
         <h3 className='text-5xl max-md:text-3xl font-extrabold text-center mb-10 text-white'
