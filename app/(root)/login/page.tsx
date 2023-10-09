@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react"
 import { toast } from "react-toastify"; 
 
-
 const Login = () => {
   
   const [email, setEmail] = useState("");

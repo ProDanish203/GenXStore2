@@ -6,30 +6,41 @@ import { ImageUpload } from '../helpers/ImageUpload';
 
 export const ProductForm = () => {
 
-    const [title, setTitle] = useState("")
-    const [desc, setDesc] = useState("")
-    const [sarPrice, setSarPrice] = useState("")
-    const [sarOldPrice, setSarOldPrice] = useState("")
-    const [aedPrice, setAedPrice] = useState("")
-    const [aedOldPrice, setAedOldPrice] = useState("")
-    const [omrPrice, setOmrPrice] = useState("")
-    const [omrOldPrice, setOmrOldPrice] = useState("")
+    const [formData, setFormData] = useState({
+        title: '',
+        desc: '',
+        cat: 'men-watch',
+        sarPrice: '',
+        sarOldPrice: '',
+        aedPrice: '',
+        aedOldPrice: '',
+        omrPrice: '',
+        omrOldPrice: '',
+    })
 
     const [img, setImg] = useState("")
     const [img2, setImg2] = useState("")
 
 
-    const [cat, setCat] = useState("men-watch")
-
-
     const [loading, setLoading] = useState(false);
 
-
+    const handleChange = (e:any) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+      };
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         try{
             setLoading(true)
+            console.log(formData, img);
+            // const res = await fetch('/api/product/add', {
+            //     method: "POST",
+            //     body: 
+            // })
 
             setLoading(false)
         }catch(error){
@@ -48,36 +59,38 @@ export const ProductForm = () => {
         <div className='w-full'>
             <input type="text" placeholder='Product Title' required autoComplete="off"
             className='px-3 py-2 rounded-md w-full bg-neutral-800 outline-none text-white'
-            value={title}
-            onChange={(e:any) => setTitle(e.target.value)}
+            value={formData.title}
+            name='title'
+            onChange={handleChange}
             />
         </div>
 
         <div className='w-full'>
             <textarea rows={5} placeholder='Product Description' required autoComplete="off"
             className='px-3 py-2 rounded-md resize-none w-full bg-neutral-800 outline-none text-white'
-            value={desc}
-            onChange={(e:any) => setDesc(e.target.value)}
+            value={formData.desc}
+            name='desc'
+            onChange={handleChange}
             ></textarea>
         </div>
 
         <div className='w-full flex items-center gap-2 justify-between'>
-            <Input type='text' placeholder='SAR New Price' value={sarPrice} onChange={(e:any) => setSarPrice(e.target.value)}/>
-            <Input type='text' placeholder='SAR Old Price' value={sarOldPrice} onChange={(e:any) => setSarOldPrice(e.target.value)}/>
+            <Input type='text' placeholder='SAR New Price' name="sarPrice" value={formData.sarPrice} onChange={handleChange}/>
+            <Input type='text' placeholder='SAR Old Price' name="sarOldPrice" value={formData.sarOldPrice} onChange={handleChange}/>
         </div>
 
         <div className='w-full flex items-center gap-2 justify-between'>
-            <Input type='text' placeholder='AED New Price' value={aedPrice} onChange={(e:any) => setAedPrice(e.target.value)}/>
-            <Input type='text' placeholder='AED Old Price' value={aedOldPrice} onChange={(e:any) => setAedOldPrice(e.target.value)}/>
+            <Input type='text' placeholder='AED New Price' name="aedPrice" value={formData.aedPrice} onChange={handleChange}/>
+            <Input type='text' placeholder='AED Old Price' name="aedOldPrice" value={formData.aedOldPrice} onChange={handleChange}/>
         </div>
 
         <div className='w-full flex items-center gap-2 justify-between'>
-            <Input type='text' placeholder='OMR New Price' value={omrPrice} onChange={(e:any) => setOmrPrice(e.target.value)}/>
-            <Input type='text' placeholder='OMR Old Price' value={omrOldPrice} onChange={(e:any) => setOmrOldPrice(e.target.value)}/>
+            <Input type='text' placeholder='OMR New Price' name="omrPrice" value={formData.omrPrice} onChange={handleChange}/>
+            <Input type='text' placeholder='OMR Old Price' name="omrOldPrice" value={formData.omrOldPrice} onChange={handleChange}/>
         </div>
 
         <div className='w-full'>
-            <select required name="cat" onChange={(e:any) => setCat(e.target.value)}
+            <select required name="cat" onChange={handleChange}
             className='py-2 px-2 rounded-md bg-neutral-800 max-md:w-full w-[48%] text-white'
             >
                 <option value="men-watch">Men's watch</option>

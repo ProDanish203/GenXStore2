@@ -44,12 +44,12 @@ export const Header = () => {
                 <p>Home</p>
             </Link>
 
-            <Link href='/shop'
+            <Link href='/shop/watches'
             className='text-white hover:text-primary text-md font-semibold flex items-center gap-2 justify-center'
             data-aos='fade-left' data-aos-delay='350' data-aos-duration='1200'
             >
                 <i className='fas fa-shopping-bag'></i>
-                <p>Shop</p>
+                <p>Watches</p>
             </Link>
 
             <form onSubmit={handleSearch}
@@ -70,7 +70,7 @@ export const Header = () => {
             <Link href='/'>
                 <i className='fas fa-home text-xl'></i>
             </Link>
-            <Link href='/shop'>
+            <Link href='/shop/watches'>
                 <i className='fas fa-shopping-bag text-xl'></i>
             </Link>
         </nav>

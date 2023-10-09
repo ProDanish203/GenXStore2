@@ -1,5 +1,4 @@
 import { NetflixCard, ServiceCard, YoutubeCard } from "@/components/cards";
-import { Heading } from "@/components/helpers/Heading";
 import { Hero } from "@/components/shared";
 
 
@@ -9,7 +8,8 @@ export default function Home() {
       <Hero/>
 
       <section className="my-10">
-        <Heading title="Services We Provide" center/>
+        <h3 className='text-5xl font-extrabold text-white text-center my-5 lg:mb-10 headingLine'>Services We Provide</h3>
+
 
         <div className="max-lg:mt-20">
           <ServiceCard/>
