@@ -2,7 +2,7 @@
 import React, { FormEvent, useState } from 'react'
 import { Input } from './Input'
 import { toast } from "react-toastify";
-import { ImageUpload } from '../helpers/ImageUpload';
+import { UploadWidget } from '../helpers/UploadWidget';
 
 export const ProductForm = () => {
 
@@ -18,10 +18,7 @@ export const ProductForm = () => {
         omrOldPrice: '',
     })
 
-    const [img, setImg] = useState("")
-    const [img2, setImg2] = useState("")
-
-
+    const [img, setImg] = useState([])
     const [loading, setLoading] = useState(false);
 
     const handleChange = (e:any) => {
@@ -30,17 +27,41 @@ export const ProductForm = () => {
           ...formData,
           [name]: value,
         });
-      };
+    };
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+        //@ts-ignore
+        if(!img || img.length == 0) return toast.error("Image is required");
+        if(!formData.title || !formData.desc) return toast.error("Please provide title and description");
+        if(!formData.sarPrice || !formData.sarOldPrice || !formData.aedPrice || !formData.aedOldPrice || !formData.omrPrice || !formData.omrOldPrice) return toast.error("Please provide all the prices");
+
         try{
             setLoading(true)
-            console.log(formData, img);
-            // const res = await fetch('/api/product/add', {
-            //     method: "POST",
-            //     body: 
-            // })
+            const res = await fetch('/api/product/add', {
+                method: "POST",
+                body: JSON.stringify({
+                    formData, img
+                }) 
+            })
+
+            const data = await res.json();
+
+            if(res.ok){
+                toast.success("Product added successfully");
+                setFormData({
+                    title: '',
+                    desc: '',
+                    cat: 'men-watch',
+                    sarPrice: '',
+                    sarOldPrice: '',
+                    aedPrice: '',
+                    aedOldPrice: '',
+                    omrPrice: '',
+                    omrOldPrice: '',
+                })
+                setImg([]);
+            }
 
             setLoading(false)
         }catch(error){
@@ -100,19 +121,7 @@ export const ProductForm = () => {
         </div>
 
         <div className='w-full flex items-center flex-wrap gap-2'>
-            <ImageUpload 
-            value={img}
-            onChange={(image:any) => setImg(image)}
-            disabled={loading}
-            label="Upload Image"
-            />
-
-            <ImageUpload 
-            value={img2}
-            onChange={(image:any) => setImg2(image)}
-            disabled={loading}
-            label="Upload Image"
-            />
+            <UploadWidget setImg={setImg}/>
         </div>
 
 

@@ -10,7 +10,6 @@ import { GET } from '../api/auth/[...nextauth]/route';
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 
-
 export const metadata: Metadata = {
   title: 'Admin | Gen X Store 2',
   description: 'One place for all luxurious scents and watches',

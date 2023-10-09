@@ -4,11 +4,12 @@ import {connectDb} from "@../../../lib/config/db";
 export const POST = async (req) => {
     try{
         connectDb();
-        const {title, desc, frontImg, cat, sarPrice, sarOldPrice, aedPrice, aedOldPrice, omrPrice, omrOldPrice} = await req.json();
-        console.log(title, desc, cat, sarPrice, sarOldPrice, aedOldPrice, aedPrice, omrPrice, omrOldPrice);
+        const {formData, img} = await req.json();
+        const {title, desc, cat, sarPrice, sarOldPrice, aedPrice, aedOldPrice, omrPrice, omrOldPrice } = formData;
 
         const product = await Product.create({
-            title, desc, cat, frontImg, 
+            title, desc, cat, 
+            images: img, 
             price: [
                 {
                     ct: '🇸🇦',
