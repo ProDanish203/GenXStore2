@@ -2,6 +2,9 @@ import { Banner, Watch } from '@/components/shared';
 import React from 'react'
 
 const Watches = () => {
+
+  
+
   return (
     <main className='px-[9%] mt-16 max-lg:px-[4%] py-5 pt-24'>
 
