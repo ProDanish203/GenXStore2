@@ -68,7 +68,7 @@ const ProductPage = ({params}: {params: {id: string}}) => {
                     </p>
 
                     <div className="mt-5 w-full">
-                        <Link href={`https://wa.me/+923333960118?text=http://localhost:3000${url}`} target='_blank'
+                        <Link href={`https://wa.me/+923333960118?text=https://gen-x-store2.vercel.app${url}`} target='_blank'
                         className="text-white bg-primary py-2.5 text-center w-full px-10 max-lg:w-full block rounded-md font-semibold"
                         >
                             Buy Now

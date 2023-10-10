@@ -9,7 +9,7 @@ export const Hero = () => {
       <div className='flex max-lg:flex-col-reverse items-center justify-center w-full gap-10 sm:mt-40 mt-10'>
 
         <div className='flex-1'>
-          <h1 className='text-5xl max-sm:text-4xl font-extrabold leading-[60px] text-accent'
+          <h1 className='text-5xl max-sm:text-4xl font-extrabold leading-[60px] text-white'
           data-aos='fade-up' data-aos-delay='1200' data-aos-duration='1200'
           >Best Selling Watches <br /> And Perfumes</h1>
           <p className='text-lg text-gray-400 mt-5'

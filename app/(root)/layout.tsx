@@ -7,8 +7,8 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
-  title: 'Gen X Store ',
-  description: 'One place for all luxurious scents and watches',
+  title: 'Gen X Store',
+  description: 'One place for all luxurious watches and social media services',
 }
 
 export default function RootLayout({
