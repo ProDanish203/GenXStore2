@@ -1,10 +1,14 @@
 import { NetflixCard, ServiceCard, YoutubeCard } from "@/components/cards";
-import { Hero } from "@/components/shared";
-
+import { EnterLoader } from "@/components/helpers/EnterLoader";
+import { Hero, Ticker } from "@/components/shared";
 
 export default function Home() {
   return (
     <main className="px-[9%] max-lg:px-[4%] py-5 pt-24">
+      <EnterLoader/>
+
+      <Ticker/>
+
       <Hero/>
 
       <section className="my-10">

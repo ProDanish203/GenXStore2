@@ -2,24 +2,26 @@
 import React, { FormEvent, useState } from 'react'
 import { Input } from './Input'
 import { toast } from "react-toastify";
-import { UploadWidget } from '../helpers/UploadWidget';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
-export const ProductForm = () => {
+export const EditForm = ({data}:any) => {
 
     const [formData, setFormData] = useState({
-        title: '',
-        desc: '',
-        cat: 'men-watch',
-        sarPrice: '',
-        sarOldPrice: '',
-        aedPrice: '',
-        aedOldPrice: '',
-        omrPrice: '',
-        omrOldPrice: '',
+        title: data.title,
+        desc: data.desc,
+        cat: data.cat,
+        sarPrice: data.price[0].rate,
+        sarOldPrice: data.price[0].oldRate,
+        aedPrice: data.price[1].rate,
+        aedOldPrice: data.price[1].oldRate,
+        omrPrice: data.price[2].rate,
+        omrOldPrice: data.price[2].oldRate,
     })
 
-    const [img, setImg] = useState([])
     const [loading, setLoading] = useState(false);
+
+    const router = useRouter();
 
     const handleChange = (e:any) => {
         const { name, value } = e.target;
@@ -32,35 +34,21 @@ export const ProductForm = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         //@ts-ignore
-        if(!img || img.length == 0) return toast.error("Image is required");
         if(!formData.title || !formData.desc) return toast.error("Please provide title and description");
         if(!formData.sarPrice || !formData.sarOldPrice || !formData.aedPrice || !formData.aedOldPrice || !formData.omrPrice || !formData.omrOldPrice) return toast.error("Please provide all the prices");
 
         try{
             setLoading(true)
-            const res = await fetch('/api/product/add', {
-                method: "POST",
+            const res = await fetch(`/api/product/update/${data._id}`, {
+                method: "PUT",
                 body: JSON.stringify({
-                    formData, img
+                    formData,
                 }) 
             })
 
-            const data = await res.json();
-
             if(res.ok){
-                toast.success("Product added successfully");
-                setFormData({
-                    title: '',
-                    desc: '',
-                    cat: 'men-watch',
-                    sarPrice: '',
-                    sarOldPrice: '',
-                    aedPrice: '',
-                    aedOldPrice: '',
-                    omrPrice: '',
-                    omrOldPrice: '',
-                })
-                setImg([]);
+                toast.success("Product Updated Successfully");
+                router.push('/admin');
             }else{
                 toast.error("Something went wrong")
             }
@@ -74,10 +62,21 @@ export const ProductForm = () => {
     }
 
   return (
-    <>
+<>
     <form onSubmit={handleSubmit} className="glassmorphism flex flex-col justify-center gap-5 px-3 py-5" 
     data-aos='fade-up' data-aos-delay='400' data-aos-duration='1200'
     >
+
+        <div className='flex items-center gap-3 flex-wrap'>
+        {data.images.map((img:string, i:number) => ( 
+            <div key={i} className='relative'>
+                <Image src={img} alt={formData.title} width={80} height={80}
+                className='rounded-md object-cover'
+                />
+            </div>
+        ))
+        }
+        </div>
 
         <div className='w-full'>
             <input type="text" placeholder='Product Title' required autoComplete="off"
@@ -123,19 +122,15 @@ export const ProductForm = () => {
             </select>
         </div>
 
-        <div className='w-full flex items-center flex-wrap gap-2'>
-            <UploadWidget setImg={setImg}/>
-        </div>
-
 
         <div className='w-full'>
             <button disabled={loading}
             className='bg-accent hover:bg-primary text-white py-2.5 rounded-md w-full mt-2'>
-                Add Product
+                Update Product
             </button>
         </div>
 
     </form>
-    </>
+</>
   )
 }

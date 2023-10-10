@@ -1,8 +1,7 @@
-import { Footer, Header } from '@/components/shared'
+import { AdminHeader } from '@/components/shared'
 import '../globals.css'
 import type { Metadata } from 'next'
 import { AOS } from '@/components/helpers/AOS'
-import { WhatsappBtn } from '@/components/helpers/WhatsappBtn'
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from '@/lib/Provider'
@@ -37,7 +36,7 @@ export default async function RootLayout({
           <AOS/>
           <ToastContainer/>
           <div>
-          <Header/>
+          <AdminHeader/>
           </div>
 
           <div className='min-h-[100vh]'>

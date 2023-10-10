@@ -1,26 +1,15 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import { FormEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
+export const AdminHeader = () => {
 
-export const Header = () => {
-
-    const [scrolled, setScrolled] = useState(false);
     const [mobileNav, setMobileNav] = useState(false);
 
-    const checkScroll = () => {
-        window.scrollY >= 200 ? setScrolled(true) : setScrolled(false); 
-    }
-    
-    useEffect(() => {
-    window.addEventListener("scroll", checkScroll)    
-
-    return () => window.removeEventListener("resize", checkScroll)    
-    }, [])
 
   return (
-    <header className={`${scrolled ? 'py-3 header': 'py-5'} bg-bg z-40 fixed top-0 left-0 w-full  flex items-center justify-between px-10 gap-3 `}>
+    <header className={`py-5 bg-bg z-40 fixed top-0 left-0 w-full  flex items-center justify-between px-10 gap-3 `}>
         <Link href='/' className='relative flex gap-2 items-center '
         data-aos='fade-right' data-aos-delay='1100' data-aos-duration='1200'
         >
@@ -32,28 +21,20 @@ export const Header = () => {
 
         {/* Desktop Nav */}
         <nav className='max-md:hidden flex items-center justify-center gap-5 '>
-            <Link href='/'
+            <Link href='/admin/addProduct'
             className='text-white hover:text-primary text-md font-semibold flex items-center gap-2 justify-center'
             data-aos='fade-left' data-aos-delay='1100' data-aos-duration='1200'
             >
-                <i className='fas fa-home'></i>
-                <p>Home</p>
+                <i className='fas fa-plus'></i>
+                <p>Add Product</p>
             </Link>
 
-            <Link href='/shop/watch'
+            <Link href='/admin'
             className='text-white hover:text-primary text-md font-semibold flex items-center gap-2 justify-center'
             data-aos='fade-left' data-aos-delay='1350' data-aos-duration='1200'
             >
-                <i className='fas fa-shopping-bag'></i>
-                <p>Watches</p>
-            </Link>
-
-            <Link href='/shop/perfume'
-            className='text-white hover:text-primary text-md font-semibold flex items-center gap-2 justify-center'
-            data-aos='fade-left' data-aos-delay='1500' data-aos-duration='1200'
-            >
-                <i className='fas fa-shopping-bag'></i>
-                <p>Perfumes</p>
+                <i className='fas fa-gears'></i>
+                <p>Manage</p>
             </Link>
         </nav>
 
@@ -72,22 +53,15 @@ export const Header = () => {
             className='text-white flex items-center gap-2'
             onClick={() => setMobileNav(false)}
             >
-                <i className='fas fa-home text-xl'></i>
-                <p>Home</p>
+                <i className='fas fa-plus text-xl'></i>
+                <p>Add Product</p>
             </Link>
             <Link href='/shop/watch'
             className='text-white flex items-center gap-2'
             onClick={() => setMobileNav(false)}
             >
-                <i className='fas fa-shopping-bag text-xl'></i>
-                <p>Watches</p>
-            </Link>
-            <Link href='/shop/perfume'
-            className='text-white flex items-center gap-2'
-            onClick={() => setMobileNav(false)}
-            >
-                <i className='fas fa-shopping-bag text-xl'></i>
-                <p>Perfumes</p>
+                <i className='fas fa-gears text-xl'></i>
+                <p>Manage </p>
             </Link>
         </nav>
         )}

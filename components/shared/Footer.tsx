@@ -36,16 +36,24 @@ export const Footer = () => {
             </div>
 
             <div>
-            <h4 className="text-white text-2xl font-medium capitalize">Account</h4>
+            <h4 className="text-white text-2xl font-medium capitalize">Shop</h4>
                 
                 <ul>
                     <li className="footer-list-item">
                         <i className='fas fa-user footer-logo'></i>
-                        <span>Sign in</span>
+                        <span>
+                        <Link href='/shop/watch'>
+                            Watches
+                        </Link>
+                        </span>
                     </li>
                     <li className="footer-list-item">
                         <i className='fas fa-user footer-logo'></i>
-                        <span>Login</span>
+                        <span>
+                        <Link href='/shop/perfume'>
+                            Perfumes
+                        </Link>
+                        </span>
                     </li>
                 </ul>
             </div>
