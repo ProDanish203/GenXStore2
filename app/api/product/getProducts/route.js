@@ -4,6 +4,7 @@ import {connectDb} from "@../../../lib/config/db";
 export const revalidate = 1;
 export const GET = async (req) => {
     try{
+        
         connectDb();
         const product = await Product.find();
 
