@@ -6,7 +6,7 @@ export const PUT = async (req, {params}) => {
         const {id} = params;
         const { formData } = await req.json();
         const {title, desc, cat, sarPrice, sarOldPrice, aedPrice, aedOldPrice, omrPrice, omrOldPrice } = formData;
-
+        
         connectDb();
         const priceArray = [
             {

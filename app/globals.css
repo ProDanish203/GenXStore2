@@ -67,7 +67,7 @@ img{
 }
 
 .old-rate{
-  text-decoration: line-through 2px var(--main);
+  text-decoration: line-through 3px #111;
 }
 .heading{
   line-height: 60px;

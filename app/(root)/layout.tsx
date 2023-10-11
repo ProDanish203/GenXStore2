@@ -9,6 +9,18 @@ import 'react-toastify/dist/ReactToastify.css';
 export const metadata: Metadata = {
   title: 'Gen X Store',
   description: 'One place for all luxurious watches and social media services',
+  // icons: {
+  //   icon: [
+  //     '/favicon.ico?v=2'
+  //   ],
+  //   apple: [
+  //     '/apple-touch-icon.png?v=2'
+  //   ],
+  //   shortcut:[
+  //     '/apple-touch-icon.png'
+  //   ]
+  // },
+  // manifest: '/site.webmanifest'
 }
 
 export default function RootLayout({

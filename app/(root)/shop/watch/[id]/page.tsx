@@ -55,9 +55,12 @@ const ProductPage = ({params}: {params: {id: string}}) => {
 
                     <div className="mt-5">
                         {data?.price.map((price:any, i:number) => (
-                            <div className="flex gap-2 items-baseline" key={i}>
-                                <p className="lg:text-3xl text-xl font-extrabold text-white">{price.ct} {price.rate}</p>
-                                <p className="old-rate lg:text-lg font-light text-gray-600">{price.oldRate}</p>
+                            <div className="relative" key={i}>
+                                <p className="lg:text-3xl text-xl block font-extrabold text-white">{price.ct} {price.rate}</p>
+                                <div className="flex gap-2 items-center">
+                                    <p className="old-rate lg:text-lg font-light text-gray-300">{price.oldRate}</p>
+                                    <p className="text-sm text-gray-400">30% OFF</p>
+                                </div>
                             </div>       
                         ))}
                     </div>

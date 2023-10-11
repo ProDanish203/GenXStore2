@@ -12,6 +12,18 @@ import { redirect } from 'next/navigation'
 export const metadata: Metadata = {
   title: 'Admin | Gen X Store 2',
   description: 'One place for all luxurious scents and watches',
+  icons: {
+    icon: [
+      '/favicon.ico?v=1'
+    ],
+    apple: [
+      '/apple-touch-icon.png?v=1'
+    ],
+    shortcut:[
+      '/apple-touch-icon.png'
+    ]
+  },
+  manifest: '/site.webmanifest'
 }
 
 export default async function RootLayout({
