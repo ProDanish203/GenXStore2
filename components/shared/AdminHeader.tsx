@@ -49,14 +49,14 @@ export const AdminHeader = () => {
         <nav className='md:hidden max-w-[250px] w-full flex flex-col gap-4 absolute z-50 top-[80%] right-5 justify-center glassmorphism text-black px-3 py-2 rounded-md shadow-sm'
             data-aos='fade-up' data-aos-delay='100' data-aos-duration='400'
             >
-            <Link href='/'
+            <Link href='/admin/addProduct'
             className='text-white flex items-center gap-2'
             onClick={() => setMobileNav(false)}
             >
                 <i className='fas fa-plus text-xl'></i>
                 <p>Add Product</p>
             </Link>
-            <Link href='/shop/watch'
+            <Link href='/admin'
             className='text-white flex items-center gap-2'
             onClick={() => setMobileNav(false)}
             >
