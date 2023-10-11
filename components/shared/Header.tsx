@@ -20,7 +20,7 @@ export const Header = () => {
     }, [])
 
   return (
-    <header className={`${scrolled ? 'py-3 header': 'py-5'} bg-bg z-40 fixed top-0 left-0 w-full  flex items-center justify-between px-10 gap-3 `}>
+    <header className={`${scrolled ? 'header': ''} bg-bg z-40 fixed top-0 left-0 w-full  flex items-center justify-between px-10 gap-3 `}>
         <Link href='/' className='relative flex gap-2 items-center '
         data-aos='fade-right' data-aos-delay='1100' data-aos-duration='1200'
         >

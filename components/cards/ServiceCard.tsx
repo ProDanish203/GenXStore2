@@ -8,12 +8,12 @@ export const ServiceCard = () => {
         <div className="flex-1 relative flex justify-center items-center"
         data-aos='fade-right' data-aos-delay='200' data-aos-duration='1200'
         >
-            <Image src='/images/services/fb-mone.jpg' alt="Facebook-monetization" width={500} height={500}
+            <Image src='/images/services/fb-mone.jpg' alt="Youtube-monetization" width={500} height={500}
             className="rounded-md object-cover"
             />
         </div>
 
-        <div className="max-lg:bg-transparent max-lg:border-none glassmorphism rounded-md lg:px-3 py-4"
+        <div className="flex-1 max-lg:bg-transparent max-lg:border-none glassmorphism rounded-md lg:px-3 py-4"
         data-aos='fade-left' data-aos-delay='200' data-aos-duration='1200'
         >
             

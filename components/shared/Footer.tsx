@@ -8,7 +8,7 @@ export const Footer = () => {
 
         <div className="grid-5">
             <div className="relative">
-                <Image src='/images/logo.jpg' alt="logo" 
+                <Image src='https://res.cloudinary.com/dwx3xdcc9/image/upload/v1697028474/genxstore_uploads/ncnipraxyw5m4lphhi34.jpg' alt="logo" 
                 width={200}
                 height={150}
                 className='object-cover' />
