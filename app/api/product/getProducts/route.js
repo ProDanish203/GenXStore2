@@ -3,9 +3,9 @@ import {connectDb} from "@../../../lib/config/db";
 
 export const revalidate = 1;
 export const GET = async (req) => {
+    connectDb();
     try{
         
-        connectDb();
         const product = await Product.find();
 
         if(!product) return new Response(`Failed to fetch products`, {status: 500});

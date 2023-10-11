@@ -7,7 +7,7 @@ import { ManageCard } from "@/components/cards";
 const Admin = () => {
 
   const {data, isLoading, mutate, error} = useSWR(`/api/product/getProducts`, fetcher)
-
+  
   if(isLoading) return Loading();
 
   return (
