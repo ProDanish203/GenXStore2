@@ -9,18 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 export const metadata: Metadata = {
   title: 'Gen X Store',
   description: 'One place for all luxurious watches and social media services',
-  // icons: {
-  //   icon: [
-  //     '/favicon.ico?v=2'
-  //   ],
-  //   apple: [
-  //     '/apple-touch-icon.png?v=2'
-  //   ],
-  //   shortcut:[
-  //     '/apple-touch-icon.png'
-  //   ]
-  // },
-  // manifest: '/site.webmanifest'
 }
 
 export default function RootLayout({
@@ -32,6 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
       </head>
       <body className='bg-bg'>
         
