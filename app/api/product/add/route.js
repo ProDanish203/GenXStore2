@@ -18,14 +18,14 @@ export const POST = async (req) => {
                 },
                 {
                     ct: '🇦🇪',
-                    rate: sarPrice,
-                    oldRate: sarOldPrice
+                    rate: aedPrice,
+                    oldRate: aedOldPrice
                 },
                 {
                     ct: '🇴🇲',
-                    rate: sarPrice,
-                    oldRate: sarOldPrice
-                },
+                    rate: omrPrice,
+                    oldRate: omrOldPrice
+                },    
             ]
         })
 

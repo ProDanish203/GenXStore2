@@ -18,7 +18,7 @@ export const Hero = () => {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, error pariatur ipsum explicabo id modi obcaecati ut molestias alias quis tenetur dolor, numquam recusandae inventore et, dolores quas cumque distinctio.
           </p>
 
-          <Link href="/shop" 
+          <Link href="/shop/watch" 
           data-aos='fade-up' data-aos-delay='1650' data-aos-duration='1200'
           className='flex w-fit items-center justify-center gap-2 font-bold hover:gap-4 bg-accent hover:shadow-md text-white rounded-md py-3 px-4 mt-4'>
             <p>Explore</p>
