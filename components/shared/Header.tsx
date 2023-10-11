@@ -1,8 +1,7 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import { FormEvent, useEffect, useState } from 'react'
-
+import { useEffect, useState } from 'react'
 
 export const Header = () => {
 
@@ -22,7 +21,7 @@ export const Header = () => {
   return (
     <header className={`${scrolled ? 'header': ''} bg-bg z-40 fixed top-0 left-0 w-full  flex items-center justify-between px-10 gap-3 `}>
         <Link href='/' className='relative flex gap-2 items-center '
-        data-aos='fade-right' data-aos-delay='1100' data-aos-duration='1200'
+        data-aos='fade-right' data-aos-delay='100' data-aos-duration='1200'
         >
             <Image src='/images/header-logo.png'alt='logo' width={80} height={40}
             className='object-cover'
@@ -34,7 +33,7 @@ export const Header = () => {
         <nav className='max-md:hidden flex items-center justify-center gap-5 '>
             <Link href='/'
             className='text-white hover:text-primary text-md font-semibold flex items-center gap-2 justify-center'
-            data-aos='fade-left' data-aos-delay='1100' data-aos-duration='1200'
+            data-aos='fade-left' data-aos-delay='100' data-aos-duration='1200'
             >
                 <i className='fas fa-home'></i>
                 <p>Home</p>
@@ -42,7 +41,7 @@ export const Header = () => {
 
             <Link href='/shop/watch'
             className='text-white hover:text-primary text-md font-semibold flex items-center gap-2 justify-center'
-            data-aos='fade-left' data-aos-delay='1350' data-aos-duration='1200'
+            data-aos='fade-left' data-aos-delay='350' data-aos-duration='1200'
             >
                 <i className='fas fa-shopping-bag'></i>
                 <p>Watches</p>
@@ -50,7 +49,7 @@ export const Header = () => {
 
             <Link href='/shop/perfume'
             className='text-white hover:text-primary text-md font-semibold flex items-center gap-2 justify-center'
-            data-aos='fade-left' data-aos-delay='1500' data-aos-duration='1200'
+            data-aos='fade-left' data-aos-delay='500' data-aos-duration='1200'
             >
                 <i className='fas fa-shopping-bag'></i>
                 <p>Perfumes</p>

@@ -19,6 +19,7 @@ export const ProductCard = ({data, redirectPath}:any) => {
             <div className="flex gap-2 items-baseline" key={i}>
                 <p className="font-extrabold text-white">{price.ct} {price.rate}</p>
                 <p className="old-rate font-light text-gray-300">{price.oldRate}</p>
+                <p className='text-gray-300 text-sm'>-30% OFF</p>
             </div>       
           ))}
           </div>

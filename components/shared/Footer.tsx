@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 
-
 export const Footer = () => {
   return (
     <footer className="relative bg-black py-5 mt-10 px-[9%] max-lg:px-[4%]">
@@ -20,7 +19,7 @@ export const Footer = () => {
                 <ul>
                     <li className="footer-list-item">
                         <i className='fas fa-location-dot footer-logo'></i>
-                        <address className='footer-detail'>123 street, houston road, Washington, USA</address>
+                        <address className='footer-detail'>Currently working in 🇸🇦 KSA   🇦🇪 UAE  🇴🇲 OMAN </address>
                     </li>
                     <li className="footer-list-item">
                         <i className='fas fa-phone footer-logo'></i>

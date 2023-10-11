@@ -10,7 +10,7 @@ export const AdminHeader = () => {
   return (
     <header className={` bg-bg z-40 fixed top-0 left-0 w-full  flex items-center justify-between px-10 gap-3 `}>
         <Link href='/' className='relative flex gap-2 items-center '
-        data-aos='fade-right' data-aos-delay='1100' data-aos-duration='1200'
+        data-aos='fade-right' data-aos-delay='100' data-aos-duration='1200'
         >
             <Image src='/images/header-logo.png'alt='logo' width={80} height={40}
             className='object-cover'
