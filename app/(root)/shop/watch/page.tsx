@@ -36,7 +36,6 @@ const Watches = () => {
   // @ts-ignore
   const coupleWatch = data?.filter(x => x.cat == 'couple-watch');
 
-
   return (
     <main className='px-[9%] mt-16 max-lg:px-[4%] py-5 pt-10'>
       <Ticker/>
