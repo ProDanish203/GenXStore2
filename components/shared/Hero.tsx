@@ -14,7 +14,7 @@ export const Hero = () => {
           <p className='text-lg text-gray-400 mt-5'
           data-aos='fade-up' data-aos-delay='150' data-aos-duration='1200'
           >
-            We deal in all kinds of social media marketing services such as facebook and youtube monetization. We are scamraud approved, Alhamdulillah, with upto 500+ happy client and reviews. Our store contain all kinds of luxurious and digital watches
+            We deal in all kinds of social media marketing services such as facebook and youtube monetization. We are scamraud approved, Alhamdulillah, with upto 500+ happy client and reviews. Our store contain all kinds of luxurious and digital watches.
           </p>
 
           <Link href="/shop/watch" 

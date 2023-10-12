@@ -13,7 +13,7 @@ export const Banner = ({heading, text, image}: Props) => {
 
         <div className='flex-1'>
             <div>
-                <h3 className='text-primary md:text-5xl text-3xl font-extrabold max-md:leading-[40px] leading-[60px] md:mb-10 mb-3'><br className='max-md:hidden'/>{heading}</h3>
+                <h3 className='capitalize text-white md:text-5xl text-3xl font-extrabold max-md:leading-[40px] leading-[60px] md:mb-10 mb-3'><br className='max-md:hidden'/>{heading}</h3>
 
                 <p className='text-gray-400 my-4 lg:text-xl text-lg xl:max-w-[80%]'>
                     {text}

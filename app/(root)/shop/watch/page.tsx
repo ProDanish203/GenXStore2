@@ -41,7 +41,7 @@ const Watches = () => {
   return (
     <main className='px-[9%] mt-16 max-lg:px-[4%] py-5 pt-24'>
 
-    <Banner heading="Smart Digital Watch For Luxurious Life" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos asperiores esse praesentium totam omnis, quia ut corrupti molestiae, excepturi perspiciatis assumenda doloremque necessitatibus hic commodi qui earum, veritatis aliquid sunt." image='/images/watch1/front.jpg'/>
+    <Banner heading="Luxurious and affordable watches " text="At Gen X Store 2, we're your ultimate source for luxury and digital watches. Explore our curated collection to find your ideal timepiece, all backed by our Scamraud approval for a secure shopping experience. Elevate your wrist game with us today!" image='/images/watch1/front.jpg'/>
 
       <div className='lg:mt-40 mt-10'>
         <h3 className='text-5xl font-extrabold text-white text-center my-5 lg:mb-10 headingLine'>Men's Watch</h3>

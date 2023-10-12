@@ -3,6 +3,7 @@ import Link from "next/link"
 
 export const Footer = () => {
   return (
+    <>
     <footer className="relative bg-black py-5 mt-10 px-[9%] max-lg:px-[4%]">
 
         <div className="grid-5">
@@ -19,7 +20,7 @@ export const Footer = () => {
                 <ul>
                     <li className="footer-list-item">
                         <i className='fas fa-location-dot footer-logo'></i>
-                        <address className='footer-detail'>Currently working in 🇸🇦 KSA   🇦🇪 UAE  🇴🇲 OMAN </address>
+                        <address className='footer-detail'>Working Internationally </address>
                     </li>
                     <li className="footer-list-item">
                         <i className='fas fa-phone footer-logo'></i>
@@ -38,6 +39,14 @@ export const Footer = () => {
             <h4 className="text-white text-2xl font-medium capitalize">Shop</h4>
                 
                 <ul>
+                    <li className="footer-list-item">
+                        <i className='fas fa-user footer-logo'></i>
+                        <span>
+                        <Link href='/'>
+                            Home
+                        </Link>
+                        </span>
+                    </li>
                     <li className="footer-list-item">
                         <i className='fas fa-user footer-logo'></i>
                         <span>
@@ -62,9 +71,8 @@ export const Footer = () => {
                 
                 <ul className="footer-list">
 
-                    <li className="footer-list-item">
-                        <i className='fas fa-map footer-logo'></i>
-                        <span className='footer-detail'>About Us</span>
+                    <li className="text-md mt-2">
+                        <span className='text-white'>Delivering our services and prioducts internationally with great and trusted delivery services.</span>
                     </li>
 
                 </ul>
@@ -74,5 +82,14 @@ export const Footer = () => {
         </div>
 
     </footer>
+
+    <footer className="w-full py-2">
+        <p className="text-center text-white text-sm">
+            Copyright &copy; All Rights Reserved. | Gen X Store 2. Website developed by <span>
+                <Link href="https://danish-siddiqui.vercel.app" target="_blank" className="text-purple-500">Danish Siddiui</Link>
+            </span>
+        </p>
+    </footer>
+    </>
   )
 }
