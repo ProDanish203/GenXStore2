@@ -52,17 +52,20 @@ export const ServiceCard = () => {
                 
                 <div className="text-white">
                     <p className="text-lg font-bold">Price: </p>
-                    <p>
+                    <p className=" flex gap-2 items-center">
                         <span className="text-xl"> 🇸🇦 400 SAR </span>
-                        <span className="old-rate text-sm text-gray-400">500 SAR</span>
+                        <span className="old-rate font-light text-gray-300 text-sm">500 SAR</span>
+                        <span className="text-sm text-gray-300">-30% OFF</span>
                     </p>
-                    <p>
+                    <p  className=" flex gap-2 items-center">
                         <span className="text-xl"> 🇦🇪 400 AED </span>
-                        <span className="old-rate text-sm text-gray-400">500 AED</span>
+                        <span className="old-rate font-light text-gray-300 text-sm">500 AED</span>
+                        <span className="text-sm text-gray-300">-30% OFF</span>
                     </p>
-                    <p>
+                    <p  className=" flex gap-2 items-center">
                         <span className="text-xl"> 🇴🇲 40 OMR </span>
-                        <span className="old-rate text-sm text-gray-400">50 OMR</span>
+                        <span className="old-rate font-light text-gray-300 text-sm">50 OMR</span>
+                        <span className="text-sm text-gray-300">-30% OFF</span>
                     </p>
                 </div>
 

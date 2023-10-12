@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <section className='min-h-[70vh] relative'>
       
-      <div className='flex max-lg:flex-col-reverse items-center justify-center w-full gap-10 mt-10'>
+      <div className='flex max-lg:flex-col-reverse items-center justify-center w-full gap-10'>
 
         <div className='flex-1'>
           <h1 className='text-5xl max-md:text-4xl font-extrabold leading-[60px] text-white'
