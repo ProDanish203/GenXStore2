@@ -55,14 +55,14 @@ export const Footer = () => {
                         </Link>
                         </span>
                     </li>
-                    <li className="footer-list-item">
+                    {/* <li className="footer-list-item">
                         <i className='fas fa-user footer-logo'></i>
                         <span>
                         <Link href='/shop/perfume'>
                             Perfumes
                         </Link>
                         </span>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
 
@@ -86,7 +86,7 @@ export const Footer = () => {
     <footer className="w-full py-2">
         <p className="text-center text-white text-sm">
             Copyright &copy; All Rights Reserved. | Gen X Store 2. Website developed by <span>
-                <Link href="https://danish-siddiqui.vercel.app" target="_blank" className="text-purple-500">Danish Siddiui</Link>
+                <Link href="https://danish-siddiqui.vercel.app" target="_blank" className="text-purple-500">Danish Siddiqui</Link>
             </span>
         </p>
     </footer>

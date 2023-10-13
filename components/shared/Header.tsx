@@ -47,13 +47,13 @@ export const Header = () => {
                 <p>Watches</p>
             </Link>
 
-            <Link href='/shop/perfume'
+            {/* <Link href='/shop/perfume'
             className='text-white hover:text-primary text-md font-semibold flex items-center gap-2 justify-center'
             data-aos='fade-left' data-aos-delay='500' data-aos-duration='1200'
             >
                 <i className='fas fa-shopping-bag'></i>
                 <p>Perfumes</p>
-            </Link>
+            </Link> */}
         </nav>
 
         <div className='md:hidden relative'
@@ -81,13 +81,13 @@ export const Header = () => {
                 <i className='fas fa-shopping-bag text-xl'></i>
                 <p>Watches</p>
             </Link>
-            <Link href='/shop/perfume'
+            {/* <Link href='/shop/perfume'
             className='text-white flex items-center gap-2'
             onClick={() => setMobileNav(false)}
             >
                 <i className='fas fa-shopping-bag text-xl'></i>
                 <p>Perfumes</p>
-            </Link>
+            </Link> */}
         </nav>
         )}
     </header>
