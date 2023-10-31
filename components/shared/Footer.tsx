@@ -72,7 +72,7 @@ export const Footer = () => {
                 <ul className="footer-list">
 
                     <li className="text-md mt-2">
-                        <span className='text-white'>Delivering our services and prioducts internationally with great and trusted delivery services.</span>
+                        <span className='text-white'>Delivering our services and products internationally with great and trusted delivery services.</span>
                     </li>
 
                 </ul>
