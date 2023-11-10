@@ -119,7 +119,7 @@ export const ProductForm = () => {
                 <option value="men-watch">Men's watch</option>
                 <option value="women-watch">Women's watch</option>
                 <option value="couple-watch">Couple's watch</option>
-                <option value="perfumes">Perfume</option>
+                <option value="jacket">Jacket</option>
             </select>
         </div>
 

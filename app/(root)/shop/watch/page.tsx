@@ -53,7 +53,7 @@ const Watches = () => {
 
       <div className='lg:mt-20 mt-10'>
         <h3 className='text-5xl font-extrabold text-white text-center my-5 lg:mb-10 headingLine'>Couple's Watch</h3>
-        <Watch data={coupleWatch} loading={isLoading}/>
+        <Watch cat="watch" data={coupleWatch} loading={isLoading}/>
       </div>
 
     </main>

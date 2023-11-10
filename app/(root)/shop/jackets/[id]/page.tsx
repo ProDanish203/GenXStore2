@@ -22,9 +22,9 @@ const ProductPage = ({params}: {params: {id: string}}) => {
 
         <section className="glassmorphism">
             <div className="flex max-lg:flex-col gap-5">
-                <div className="relative max-w-[500px] w-full max-lg:h-[350px] h-[600px]">
+                <div className="relative max-w-[1000px] w-full max-lg:h-[350px] h-[600px]">
                     <Image src={data?.images[index]} alt={data?.cat} fill
-                    className="object-cover rounded-md"
+                    className="object-cover rounded-md w-full"
                     />
                 </div>
 
@@ -34,7 +34,7 @@ const ProductPage = ({params}: {params: {id: string}}) => {
                     <p className="text-sm font-light text-primary">Category &gt; {data?.cat}</p>
 
                     <div className="lg:mt-10 mt-5">
-                        <p className="text-white flex items-center gap-2 hover:gap-4">
+                        <p className="max-w-[1000px] text-white flex items-center gap-2 hover:gap-4">
                             <i className="fas fa-angle-right text-primary text-xl"></i>
                             {data?.desc}
                         </p>

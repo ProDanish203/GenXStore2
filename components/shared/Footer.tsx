@@ -55,14 +55,14 @@ export const Footer = () => {
                         </Link>
                         </span>
                     </li>
-                    {/* <li className="footer-list-item">
+                    <li className="footer-list-item">
                         <i className='fas fa-user footer-logo'></i>
                         <span>
-                        <Link href='/shop/perfume'>
-                            Perfumes
+                        <Link href='/shop/jackets'>
+                            Jackets
                         </Link>
                         </span>
-                    </li> */}
+                    </li>
                 </ul>
             </div>
 

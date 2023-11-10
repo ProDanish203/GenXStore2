@@ -9,20 +9,23 @@ export const POST = async (req) => {
 
         const product = await Product.create({
             title, desc, cat, 
-            images: img, 
+            images: img,
             price: [
                 {
-                    ct: '🇸🇦',
+                    // ct: '🇸🇦',
+                    ct: '🇺🇸',
                     rate: sarPrice,
                     oldRate: sarOldPrice
                 },
                 {
-                    ct: '🇦🇪',
+                    // ct: '🇦🇪',
+                    ct: '🇬🇧',
                     rate: aedPrice,
                     oldRate: aedOldPrice
                 },
                 {
-                    ct: '🇴🇲',
+                    // ct: '🇴🇲',
+                    ct: '🇨🇦',
                     rate: omrPrice,
                     oldRate: omrOldPrice
                 },    
