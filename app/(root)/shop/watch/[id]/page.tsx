@@ -24,7 +24,7 @@ const ProductPage = ({params}: {params: {id: string}}) => {
             <div className="flex max-lg:flex-col gap-5">
                 <div className="relative max-w-[500px] w-full max-lg:h-[350px] h-[600px]">
                     <Image src={data?.images[index]} alt={data?.cat} fill
-                    className="object-cover rounded-md"
+                    className="object-cover w-full rounded-md"
                     />
                 </div>
 

@@ -1,5 +1,5 @@
 "use client"
-import { Banner, Watch } from '@/components/shared';
+import { Banner, Jacket } from '@/components/shared';
 import React from 'react'
 import useSWR from "swr";
 import { fetcher } from "@/lib/fetcher";
@@ -19,7 +19,7 @@ const Watches = () => {
         <h3 className='text-5xl font-extrabold text-white text-center my-5 lg:mb-10 headingLine'>
         Leather Jackets
         </h3>
-        <Watch cat="jackets" data={jackets} loading={isLoading}/>
+        <Jacket data={jackets} loading={isLoading}/>
       </div>
 
     </main>

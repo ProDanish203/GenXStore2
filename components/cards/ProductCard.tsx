@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const ProductCard = ({data, redirectPath}:any) => {
+
   return (
     <div className='flex flex-col overflow-hidden gap-3 rounded-md glassmorphism py-4 px-3 max-lg:max-w-[300px] max-w-[350px] w-full'>
       
