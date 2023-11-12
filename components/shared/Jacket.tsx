@@ -7,7 +7,7 @@ export const Jacket = ({data, loading}: any) => {
     <div className='flex flex-wrap items-center justify-center gap-5 mt-20'>
     {
       data?.map((data:any, index:number) => (
-        <ProductCard data={data} redirectPath='jacket' key={index}/>
+        <ProductCard data={data} redirectPath='jackets' key={index}/>
       ))
     }
     </div>
