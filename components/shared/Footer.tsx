@@ -59,7 +59,7 @@ export const Footer = () => {
                         <i className='fas fa-user footer-logo'></i>
                         <span>
                         <Link href='/shop/jackets'>
-                            Jackets
+                            Leather Jackets
                         </Link>
                         </span>
                     </li>

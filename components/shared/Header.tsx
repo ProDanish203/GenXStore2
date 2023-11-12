@@ -52,7 +52,7 @@ export const Header = () => {
             data-aos='fade-left' data-aos-delay='500' data-aos-duration='1200'
             >
                 <i className='fas fa-shopping-bag'></i>
-                <p>Jackets</p>
+                <p>Leather Jackets</p>
             </Link>
         </nav>
 
@@ -86,7 +86,7 @@ export const Header = () => {
             onClick={() => setMobileNav(false)}
             >
                 <i className='fas fa-shopping-bag text-xl'></i>
-                <p>Jackets</p>
+                <p>Leather Jackets</p>
             </Link>
         </nav>
         )}

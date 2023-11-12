@@ -6,16 +6,30 @@ import { UploadWidget } from '../helpers/UploadWidget';
 
 export const ProductForm = () => {
 
+    // const [formData, setFormData] = useState({
+    //     title: '',
+    //     desc: '',
+    //     cat: 'men-watch',
+    //     sarPrice: '',
+    //     sarOldPrice: '',
+    //     aedPrice: '',
+    //     aedOldPrice: '',
+    //     omrPrice: '',
+    //     omrOldPrice: '',
+    // })
+
     const [formData, setFormData] = useState({
         title: '',
         desc: '',
         cat: 'men-watch',
-        sarPrice: '',
-        sarOldPrice: '',
-        aedPrice: '',
-        aedOldPrice: '',
-        omrPrice: '',
-        omrOldPrice: '',
+        usPrice: '',
+        usOldPrice: '',
+        gbpPrice: '',
+        gbpOldPrice: '',
+        cadPrice: '',
+        cadOldPrice: '',
+        euPrice: '',
+        euOldPrice: '',
     })
 
     const [img, setImg] = useState([])
@@ -34,7 +48,11 @@ export const ProductForm = () => {
         //@ts-ignore
         if(!img || img.length == 0) return toast.error("Image is required");
         if(!formData.title || !formData.desc) return toast.error("Please provide title and description");
-        if(!formData.sarPrice || !formData.sarOldPrice || !formData.aedPrice || !formData.aedOldPrice || !formData.omrPrice || !formData.omrOldPrice) return toast.error("Please provide all the prices");
+        // if(!formData.sarPrice || !formData.sarOldPrice || !formData.aedPrice || !formData.aedOldPrice || !formData.omrPrice || !formData.omrOldPrice) return toast.error("Please provide all the prices");
+
+        // For Jackets
+        if(!formData.usPrice || !formData.usOldPrice || !formData.gbpPrice || !formData.gbpOldPrice || !formData.cadPrice || !formData.cadOldPrice || !formData.euPrice || !formData.euOldPrice) return toast.error("Please provide all the prices");
+
 
         try{
             setLoading(true)
@@ -49,17 +67,18 @@ export const ProductForm = () => {
 
             if(res.ok){
                 toast.success("Product added successfully");
-                setFormData({
-                    title: '',
-                    desc: '',
-                    cat: 'men-watch',
-                    sarPrice: '',
-                    sarOldPrice: '',
-                    aedPrice: '',
-                    aedOldPrice: '',
-                    omrPrice: '',
-                    omrOldPrice: '',
-                })
+                // setFormData({
+                //     title: '',
+                //     desc: '',
+                //     cat: 'men-watch',
+                //     sarPrice: '',
+                //     sarOldPrice: '',
+                //     aedPrice: '',
+                //     aedOldPrice: '',
+                //     omrPrice: '',
+                //     omrOldPrice: '',
+                // })
+
                 setImg([]);
             }else{
                 toast.error("Something went wrong")
@@ -97,7 +116,7 @@ export const ProductForm = () => {
             ></textarea>
         </div>
 
-        <div className='w-full flex items-center gap-2 justify-between'>
+        {/* <div className='w-full flex items-center gap-2 justify-between'>
             <Input type='text' placeholder='SAR New Price' name="sarPrice" value={formData.sarPrice} onChange={handleChange}/>
             <Input type='text' placeholder='SAR Old Price' name="sarOldPrice" value={formData.sarOldPrice} onChange={handleChange}/>
         </div>
@@ -110,6 +129,27 @@ export const ProductForm = () => {
         <div className='w-full flex items-center gap-2 justify-between'>
             <Input type='text' placeholder='OMR New Price' name="omrPrice" value={formData.omrPrice} onChange={handleChange}/>
             <Input type='text' placeholder='OMR Old Price' name="omrOldPrice" value={formData.omrOldPrice} onChange={handleChange}/>
+        </div> */}
+
+        {/* For Jackets */}
+        <div className='w-full flex items-center gap-2 justify-between'>
+            <Input type='text' placeholder='US New Price' name="usPrice" value={formData.usPrice} onChange={handleChange}/>
+            <Input type='text' placeholder='US Old Price' name="usOldPrice" value={formData.usOldPrice} onChange={handleChange}/>
+        </div>
+
+        <div className='w-full flex items-center gap-2 justify-between'>
+            <Input type='text' placeholder='GBP New Price' name="gbpPrice" value={formData.gbpPrice} onChange={handleChange}/>
+            <Input type='text' placeholder='GBP Old Price' name="gbpOldPrice" value={formData.gbpOldPrice} onChange={handleChange}/>
+        </div>
+
+        <div className='w-full flex items-center gap-2 justify-between'>
+            <Input type='text' placeholder='CAD New Price' name="cadPrice" value={formData.cadPrice} onChange={handleChange}/>
+            <Input type='text' placeholder='CAD Old Price' name="cadOldPrice" value={formData.cadOldPrice} onChange={handleChange}/>
+        </div>
+
+        <div className='w-full flex items-center gap-2 justify-between'>
+            <Input type='text' placeholder='EU New Price' name="euPrice" value={formData.euPrice} onChange={handleChange}/>
+            <Input type='text' placeholder='EU Old Price' name="euOldPrice" value={formData.euOldPrice} onChange={handleChange}/>
         </div>
 
         <div className='w-full'>

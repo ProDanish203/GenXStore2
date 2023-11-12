@@ -5,7 +5,9 @@ export const POST = async (req) => {
     try{
         connectDb();
         const {formData, img} = await req.json();
-        const {title, desc, cat, sarPrice, sarOldPrice, aedPrice, aedOldPrice, omrPrice, omrOldPrice } = formData;
+        // const {title, desc, cat, sarPrice, sarOldPrice, aedPrice, aedOldPrice, omrPrice, omrOldPrice } = formData;
+        const {title, desc, cat, usPrice, usOldPrice, gbpPrice, gbpOldPrice, cadPrice, cadOldPrice, euPrice, euOldPrice } = formData;
+
 
         const product = await Product.create({
             title, desc, cat, 
@@ -14,20 +16,26 @@ export const POST = async (req) => {
                 {
                     // ct: '🇸🇦',
                     ct: '🇺🇸',
-                    rate: sarPrice,
-                    oldRate: sarOldPrice
+                    rate: usPrice,
+                    oldRate: usOldPrice
                 },
                 {
                     // ct: '🇦🇪',
                     ct: '🇬🇧',
-                    rate: aedPrice,
-                    oldRate: aedOldPrice
+                    rate: gbpPrice,
+                    oldRate: gbpOldPrice
                 },
                 {
                     // ct: '🇴🇲',
                     ct: '🇨🇦',
-                    rate: omrPrice,
-                    oldRate: omrOldPrice
+                    rate: cadPrice,
+                    oldRate: cadOldPrice
+                },    
+                {
+                    // ct: '🇴🇲',
+                    ct: '🇩🇪',
+                    rate: euPrice,
+                    oldRate: euOldPrice
                 },    
             ]
         })
