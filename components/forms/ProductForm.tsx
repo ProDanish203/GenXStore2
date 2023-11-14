@@ -20,8 +20,8 @@ export const ProductForm = () => {
 
     const [formData, setFormData] = useState({
         title: '',
-        desc: '',
-        cat: 'men-watch',
+        desc: ``,
+        cat: 'jacket',
         usPrice: '',
         usOldPrice: '',
         gbpPrice: '',
@@ -47,7 +47,7 @@ export const ProductForm = () => {
         e.preventDefault();
         //@ts-ignore
         if(!img || img.length == 0) return toast.error("Image is required");
-        if(!formData.title || !formData.desc) return toast.error("Please provide title and description");
+        // if(!formData.title || !formData.desc) return toast.error("Please provide title and description");
         // if(!formData.sarPrice || !formData.sarOldPrice || !formData.aedPrice || !formData.aedOldPrice || !formData.omrPrice || !formData.omrOldPrice) return toast.error("Please provide all the prices");
 
         // For Jackets

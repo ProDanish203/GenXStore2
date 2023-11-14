@@ -6,14 +6,16 @@ export const ProductCard = ({data, redirectPath}:any) => {
   return (
     <div className='flex flex-col overflow-hidden gap-3 rounded-md glassmorphism py-4 px-3 max-lg:max-w-[300px] max-w-[350px] w-full'>
       
-        <div className='relative overflow-hidden hover:scale-105 max-lg:max-w-[300px] max-w-[350px] h-[250px]'>
+        <Link href={`/shop/${redirectPath}/${data._id}`} className='relative overflow-hidden hover:scale-105 max-lg:max-w-[300px] max-w-[350px] h-[250px]'>
             <Image src={`${data.images[0]}`} alt={data.title} fill
             className='relative object-cover rounded-md'
             />
-        </div>
+        </Link>
 
         <div>
-          <h3 className='text-2xl max-sm:text-xl font-extrabold text-white mb-5'>{data.title}</h3>
+          <Link href={`/shop/${redirectPath}/${data._id}`}>
+            <h3 className='text-2xl max-sm:text-xl font-extrabold text-white mb-5'>{data.title}</h3>
+          </Link>
 
           <div className='mb-2'>
           {data.price.map((price:any, i:number) => (
