@@ -10,7 +10,7 @@ export const Hero = () => {
         <div className='flex-1'>
           <h1 className='text-5xl max-md:text-4xl font-extrabold leading-[60px] text-white'
           data-aos='fade-up' data-aos-delay='100' data-aos-duration='1200'
-          >Best Selling Watches <br /> And Perfumes</h1>
+          >Best Selling Watches <br /> And Leather Jackets</h1>
           <p className='text-lg text-gray-400 mt-5'
           data-aos='fade-up' data-aos-delay='150' data-aos-duration='1200'
           >
