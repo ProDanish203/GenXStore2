@@ -119,7 +119,7 @@ const ManageCard = ({ data }: any) => {
           </Link>
 
           <Link
-            href={`/product/${data._id}`}
+            href={`/shop/product/${data._id}`}
             className="inline-flex items-center justify-center px-3 py-1.5 border border-gray-300 hover:bg-gray-50 text-gray-700 text-sm font-medium rounded transition-colors"
           >
             <Eye className="h-3.5 w-3.5" />

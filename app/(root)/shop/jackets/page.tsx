@@ -1,5 +1,5 @@
 "use client";
-import { Banner, Jacket } from "@/components/shared";
+import { Banner, ProductGrid } from "@/components/shared";
 import React from "react";
 import { getProducts } from "@/app/axios/main";
 import { useQuery } from "@tanstack/react-query";
@@ -24,7 +24,7 @@ const Watches = () => {
         <h3 className="text-5xl font-extrabold text-text text-center my-5 lg:mb-10 headingLine">
           Leather Jackets
         </h3>
-        <Jacket data={jackets} loading={isLoading} />
+        <ProductGrid data={jackets} loading={isLoading} />
       </div>
     </main>
   );

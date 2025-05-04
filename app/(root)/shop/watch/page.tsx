@@ -1,5 +1,5 @@
 "use client";
-import { Banner, Watch } from "@/components/shared";
+import { Banner, ProductGrid } from "@/components/shared";
 import { getProducts } from "@/app/axios/main";
 import { useQuery } from "@tanstack/react-query";
 
@@ -29,21 +29,21 @@ const Watches = () => {
         <h3 className="text-5xl font-extrabold text-text text-center my-5 lg:mb-10 headingLine">
           Men's Watch
         </h3>
-        <Watch data={menWatch} loading={isLoading} />
+        <ProductGrid data={menWatch} loading={isLoading} />
       </div>
 
       <div className="lg:mt-20 mt-10">
         <h3 className="text-5xl font-extrabold text-text text-center my-5 lg:mb-10 headingLine">
           Women's Watch
         </h3>
-        <Watch data={womenWatch} loading={isLoading} />
+        <ProductGrid data={womenWatch} loading={isLoading} />
       </div>
 
       <div className="lg:mt-20 mt-10">
         <h3 className="text-5xl font-extrabold text-text text-center my-5 lg:mb-10 headingLine">
           Couple's Watch
         </h3>
-        <Watch data={coupleWatch} loading={isLoading} />
+        <ProductGrid data={coupleWatch} loading={isLoading} />
       </div>
     </main>
   );

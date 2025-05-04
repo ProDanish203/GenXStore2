@@ -17,13 +17,12 @@ interface ProductData {
 
 interface ProductCardProps {
   data: ProductData;
-  redirectPath: string;
   className?: string;
 }
 
 export const ProductCard = ({
   data,
-  redirectPath,
+
   className,
 }: ProductCardProps) => {
   return (
@@ -34,7 +33,7 @@ export const ProductCard = ({
       )}
     >
       <Link
-        href={`/shop/${redirectPath}/${data._id}`}
+        href={`/shop/product/${data._id}`}
         className="block overflow-hidden relative aspect-square"
       >
         <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110">
@@ -56,7 +55,7 @@ export const ProductCard = ({
 
       <div className="p-4">
         <Link
-          href={`/shop/${redirectPath}/${data._id}`}
+          href={`/shop/product/${data._id}`}
           className="block group-hover:text-rose-600 transition-colors"
         >
           <h3 className="font-semibold text-lg line-clamp-2 mb-2 text-gray-800">
@@ -83,7 +82,7 @@ export const ProductCard = ({
 
       <div className="px-4 pb-4">
         <Link
-          href={`/shop/${redirectPath}/${data._id}`}
+          href={`/shop/product/${data._id}`}
           className="w-full inline-block transition-all duration-300 text-center py-2.5 px-4 rounded-md bg-rose-600 text-white hover:bg-rose-700 font-medium"
         >
           Buy Now
