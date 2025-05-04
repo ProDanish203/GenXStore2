@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const Hero = () => {
   const { data } = useQuery({
-    queryKey: ["banner-product"],
+    queryKey: ["products"],
     queryFn: () => getProductbyId("6525c4ae87a155f3869342bb"),
   });
   return (

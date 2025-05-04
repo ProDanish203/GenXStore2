@@ -4,8 +4,11 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { AlertCircle, Loader2, Save, Trash2 } from "lucide-react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { updateProduct } from "@/app/axios/main";
 
 export const EditForm = ({ data }: any) => {
+  const queryClient = useQueryClient();
   const [formData, setFormData] = useState({
     title: data.title,
     desc: data.desc,
@@ -21,6 +24,15 @@ export const EditForm = ({ data }: any) => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const router = useRouter();
+
+  const { mutateAsync, isPending } = useMutation({
+    mutationFn: updateProduct,
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["products"],
+      });
+    },
+  });
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -64,14 +76,10 @@ export const EditForm = ({ data }: any) => {
 
     try {
       setLoading(true);
-      const res = await fetch(`/api/product/update/${data._id}`, {
-        method: "PUT",
-        body: JSON.stringify({
-          formData,
-        }),
-      });
 
-      if (res.ok) {
+      const res = await mutateAsync({ id: data._id, product: formData });
+
+      if (res) {
         toast.success("Product updated successfully");
         router.push("/admin");
       } else {

@@ -8,7 +8,7 @@ const EditPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
 
   const { data, isLoading } = useQuery({
-    queryKey: ["product", id],
+    queryKey: ["products", id],
     queryFn: () => getProductbyId(id),
   });
 

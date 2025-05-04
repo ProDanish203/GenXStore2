@@ -8,7 +8,7 @@ export const WhatsappBtn = () => {
       target="_blank"
     >
       <div className="bg-green-600 boxShadow fixed bottom-4 right-2 z-50 flex items-center justify-center w-[60px] h-[60px] rounded-full">
-        <i className="fab fa-whatsapp text-text text-3xl"></i>
+        <i className="fab fa-whatsapp text-white text-3xl"></i>
       </div>
     </Link>
   );

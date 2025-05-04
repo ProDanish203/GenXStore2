@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const Watches = () => {
   const { data, isLoading } = useQuery({
-    queryKey: ["jackets"],
+    queryKey: ["products"],
     queryFn: () => getProducts(),
   });
 

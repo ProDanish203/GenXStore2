@@ -3,8 +3,11 @@ import { type FormEvent, useState } from "react";
 import { toast } from "sonner";
 import { UploadWidget } from "../helpers/UploadWidget";
 import { PlusCircle, X, AlertCircle, Loader2 } from "lucide-react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { addProduct } from "@/app/axios/main";
 
 export const ProductForm = () => {
+  const queryClient = useQueryClient();
   const [formData, setFormData] = useState({
     title: "",
     desc: "",
@@ -17,6 +20,15 @@ export const ProductForm = () => {
     cadOldPrice: "",
     euPrice: "",
     euOldPrice: "",
+  });
+
+  const { mutateAsync, isPending } = useMutation({
+    mutationFn: addProduct,
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["products"],
+      });
+    },
   });
 
   const [img, setImg] = useState([]);
@@ -68,17 +80,12 @@ export const ProductForm = () => {
 
     try {
       setLoading(true);
-      const res = await fetch("/api/product/add", {
-        method: "POST",
-        body: JSON.stringify({
-          formData,
-          img,
-        }),
+      const data = await mutateAsync({
+        formData,
+        img,
       });
 
-      const data = await res.json();
-
-      if (res.ok) {
+      if (data) {
         toast.success("Product added successfully");
         setImg([]);
         // Reset form

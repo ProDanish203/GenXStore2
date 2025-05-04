@@ -43,10 +43,8 @@ export const facebookMonetizationService = {
       discount: "-30% OFF",
     },
   ],
-  bookServiceLink:
-    "https://wa.me/1234567890?text=Hey, I would like to have Facebook monetization service",
-  discussMoreLink:
-    "https://wa.me/1234567890?text=Hey, I would like to discuss more about the Facebook monetization service",
+  bookServiceLink: `https://wa.me/${process.env.MOBILE_NUMBER}?text=Hey, I would like to have Facebook monetization service`,
+  discussMoreLink: `https://wa.me/${process.env.MOBILE_NUMBER}?text=Hey, I would like to discuss more about the Facebook monetization service`,
 };
 
 export const youtubeMonetizationService = {

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const AdminHeader = () => {
   const [mobileNav, setMobileNav] = useState(false);
@@ -32,7 +32,7 @@ export const AdminHeader = () => {
       {/* Desktop Nav */}
       <nav className="max-md:hidden flex items-center justify-center gap-5 ">
         <Link
-          href="/admin/addProduct"
+          href="/admin/add-product"
           className="text-text hover:text-primary text-md font-semibold flex items-center gap-2 justify-center"
           data-aos="fade-left"
           data-aos-delay="1100"
@@ -74,7 +74,7 @@ export const AdminHeader = () => {
           data-aos-duration="400"
         >
           <Link
-            href="/admin/addProduct"
+            href="/admin/add-product"
             className="text-text flex items-center gap-2"
             onClick={() => setMobileNav(false)}
           >
