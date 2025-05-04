@@ -1,15 +1,13 @@
-import { ProductCard } from '../cards'
-import Loading from '@/app/(root)/loading';
+import { ProductCard } from "../cards";
+import Loading from "@/app/(root)/loading";
 
-export const Watch = ({data, loading}: any) => {
-  if(loading) return Loading();
+export const Watch = ({ data, loading }: any) => {
+  if (loading) return Loading();
   return (
-    <div className='flex flex-wrap items-center justify-center gap-5 mt-20'>
-    {
-      data?.map((data:any, index:number) => (
-        <ProductCard data={data} redirectPath='watch' key={index}/>
-      ))
-    }
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {data?.map((data: any, index: number) => (
+        <ProductCard data={data} redirectPath="watch" key={index} />
+      ))}
     </div>
-  )
-}
+  );
+};

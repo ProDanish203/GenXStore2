@@ -1,92 +1,170 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-export const ServiceCard = () => {
-  return (
-    <div className='mt-10 flex max-lg:flex-col items-center justify-between lg:gap-10 gap-2 max-lg:px-3 py-4 rounded-md shadow-sm lg:bg-transparent lg:border-none glassmorphism max-lg:shadow-md'>
-        
-        <div className="flex-1 relative flex justify-center items-center"
-        data-aos='fade-right' data-aos-delay='200' data-aos-duration='1200'
-        >
-            <Image src='/images/services/fb-mone.jpg' alt="Youtube-monetization" width={500} height={500}
-            className="rounded-md object-cover"
-            />
-        </div>
-
-        <div className="flex-1 max-lg:bg-transparent max-lg:border-none glassmorphism rounded-md lg:px-3 py-4"
-        data-aos='fade-left' data-aos-delay='200' data-aos-duration='1200'
-        >
-            
-            <div>
-                <h2 className="text-white lg:text-2xl text-lg lg:font-extrabold font-semibold max-lg:text-center">🤑💰 Ready to Monetize Your Facebook Content? 💰🤑</h2>
-
-                <h4 className="lg:text-lg text-white my-4">Unlock your earning potential with Facebook Monetization Service! 🚀</h4>
-
-                <ul className="text-white max-lg:text-sm mb-4">
-                    <li>👉 Are you a content creator?</li>
-                    <li>👉 Love sharing your passion with the world?</li>
-                    <li>👉 Want to turn your hobby into a profitable venture?</li>
-                </ul>
-
-                <p className="text-white mb-3">Look no further! 🌟</p>
-
-                <p className="text-white">With Facebook Monetization Service, you can:</p>
-
-                <ul className="text-white max-lg:text-sm mt-2">
-                    <li>✅ Earn money from your engaging posts.</li>
-                    <li>✅ Get paid for your entertaining videos.</li>
-                    <li>✅ Generate income from your live streams.</li>
-                    <li>✅ Monetize your dedicated fan base.</li>
-                </ul>
-
-                <p className="text-white mt-2">
-                Alhamdulillah!😇, we are scamraud approved 
-                </p>
-
-                <p className="text-white my-2"><span className="font-bold">Note:</span> 
-                Currently Our Services Available In  &nbsp;
-                <span className="font-bold">
-                 🇸🇦 KSA   🇦🇪 UAE  🇴🇲 OMAN 
-                </span>
-                </p>
-                
-                <div className="text-white">
-                    <p className="text-lg font-bold">Price: </p>
-                    <p className=" flex gap-2 items-center">
-                        <span className="text-xl"> 🇸🇦 400 SAR </span>
-                        <span className="old-rate font-light text-gray-300 text-sm">500 SAR</span>
-                        <span className="text-sm text-gray-300">-30% OFF</span>
-                    </p>
-                    <p  className=" flex gap-2 items-center">
-                        <span className="text-xl"> 🇦🇪 400 AED </span>
-                        <span className="old-rate font-light text-gray-300 text-sm">500 AED</span>
-                        <span className="text-sm text-gray-300">-30% OFF</span>
-                    </p>
-                    <p  className=" flex gap-2 items-center">
-                        <span className="text-xl"> 🇴🇲 40 OMR </span>
-                        <span className="old-rate font-light text-gray-300 text-sm">50 OMR</span>
-                        <span className="text-sm text-gray-300">-30% OFF</span>
-                    </p>
-                </div>
-
-                <div className="relative flex w-full items-center justify-between lg:gap-2 gap-4 flex-wrap mt-5">
-
-                <Link href={`https://wa.me/${process.env.MOBILE_NUMBER}?text="Hey, I would like to have Facebook monetization service"`} target="_blank" 
-                className="bg-primary hover:scale-105 rounded-lg max-lg:w-full w-[48%] py-2 text-center text-white">
-                    Book Service Now
-                </Link>
-
-                <Link href={`https://wa.me/${process.env.MOBILE_NUMBER}?text="Hey, I would like to discuss more about the Facebook monetization service"`} target="_blank" 
-                className="bg-secondary hover:scale-105 rounded-lg max-lg:w-full w-[48%] py-2 text-center text-white">
-                    Discuss More
-                </Link>
-
-                </div>
-            </div>
-
-
-        </div>
-
-    </div>
-  )
+interface Price {
+  country: string;
+  flag: string;
+  currency: string;
+  amount: string;
+  oldAmount: string;
+  discount: string;
 }
+
+interface ServiceCardProps {
+  title: string;
+  subtitle: string;
+  image: string;
+  imageAlt: string;
+  questions: string[];
+  benefits: string[];
+  note?: string;
+  locations?: string;
+  prices: Price[];
+  bookServiceLink: string;
+  discussMoreLink: string;
+  imagePosition?: "left" | "right";
+  className?: string;
+}
+
+export const ServiceCard = ({
+  title,
+  subtitle,
+  image,
+  imageAlt,
+  questions,
+  benefits,
+  note,
+  locations,
+  prices,
+  bookServiceLink,
+  discussMoreLink,
+  imagePosition = "left",
+  className,
+}: ServiceCardProps) => {
+  return (
+    <div
+      className={cn(
+        "w-full overflow-hidden bg-white rounded-xl shadow-md border border-gray-100",
+        className
+      )}
+    >
+      <div className="flex flex-col lg:flex-row">
+        <div
+          className={cn(
+            "lg:w-2/5 relative",
+            imagePosition === "right" && "lg:order-2"
+          )}
+        >
+          <div className="relative h-64 lg:h-full overflow-hidden">
+            <Image
+              src={image || "/placeholder.svg"}
+              alt={imageAlt}
+              fill
+              className="object-cover transition-transform duration-700 hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60"></div>
+          </div>
+        </div>
+
+        <div
+          className={cn(
+            "lg:w-3/5 p-6 lg:p-8",
+            imagePosition === "right" && "lg:order-1"
+          )}
+        >
+          <div className="mb-6">
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+              {title}
+            </h2>
+            <p className="text-lg text-gray-700">{subtitle}</p>
+          </div>
+
+          <div className="mb-6">
+            <ul className="space-y-2">
+              {questions.map((question, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-amber-500 mr-2">👉</span>
+                  <span className="text-gray-700">{question}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-gray-700 font-medium">
+              Look no further! <span className="text-amber-500">🌟</span>
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <p className="text-gray-700 font-medium mb-2">
+              With this service, you can:
+            </p>
+            <ul className="space-y-2">
+              {benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span className="text-gray-700">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {note && (
+            <div className="mb-4">
+              <p className="text-gray-700">
+                <span className="text-amber-500">😇</span> {note}
+              </p>
+            </div>
+          )}
+
+          {locations && (
+            <div className="mb-6">
+              <p className="text-gray-700">
+                <span className="font-semibold">Note:</span> Currently Our
+                Services Available In {locations}
+              </p>
+            </div>
+          )}
+          {prices && prices.length > 0 && (
+            <div className="mb-6">
+              <p className="text-lg font-bold text-gray-900 mb-2">Price:</p>
+              <div className="space-y-2">
+                {prices.map((price, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <span className="text-lg font-medium text-gray-900">
+                      <span className="emoji-font">{price.flag}</span>{" "}
+                      {price.amount} {price.currency}
+                    </span>
+                    <span className="line-through text-sm text-gray-400">
+                      {price.oldAmount} {price.currency}
+                    </span>
+                    <span className="text-xs px-2 py-1 bg-rose-100 text-rose-700 rounded-full">
+                      {price.discount}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href={bookServiceLink}
+              target="_blank"
+              className="flex-1 bg-rose-600 hover:bg-rose-700 text-white py-3 px-6 rounded-lg font-medium text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+            >
+              Book Service Now
+            </Link>
+            <Link
+              href={discussMoreLink}
+              target="_blank"
+              className="flex-1 bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg font-medium text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+            >
+              Discuss More
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

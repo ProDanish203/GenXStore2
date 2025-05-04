@@ -1,36 +1,94 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-export const ProductCard = ({data, redirectPath}:any) => {
+interface Price {
+  ct: string;
+  rate: string;
+  oldRate: string;
+}
 
+interface ProductData {
+  _id: string;
+  title: string;
+  images: string[];
+  price: Price[];
+}
+
+interface ProductCardProps {
+  data: ProductData;
+  redirectPath: string;
+  className?: string;
+}
+
+export const ProductCard = ({
+  data,
+  redirectPath,
+  className,
+}: ProductCardProps) => {
   return (
-    <div className='flex flex-col overflow-hidden gap-3 rounded-md glassmorphism py-4 px-3 max-lg:max-w-[300px] max-w-[350px] w-full'>
-      
-        <Link href={`/shop/${redirectPath}/${data._id}`} className='relative overflow-hidden hover:scale-105 max-lg:max-w-[300px] max-w-[350px] h-[250px]'>
-            <Image src={`${data.images[0]}`} alt={data.title} fill
-            className='relative object-cover rounded-md'
-            />
+    <div
+      className={cn(
+        "overflow-hidden group transition-all duration-300 hover:shadow-lg bg-white border border-gray-200 rounded-lg",
+        className
+      )}
+    >
+      <Link
+        href={`/shop/${redirectPath}/${data._id}`}
+        className="block overflow-hidden relative aspect-square"
+      >
+        <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110">
+          <Image
+            src={data.images[0] || "/placeholder.svg"}
+            alt={data.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 350px"
+            className="object-cover"
+            priority
+          />
+        </div>
+        {data.price[0]?.oldRate && (
+          <span className="absolute top-3 right-3 bg-rose-600 text-white text-xs font-medium px-2 py-1 rounded-md">
+            -30% OFF
+          </span>
+        )}
+      </Link>
+
+      <div className="p-4">
+        <Link
+          href={`/shop/${redirectPath}/${data._id}`}
+          className="block group-hover:text-rose-600 transition-colors"
+        >
+          <h3 className="font-semibold text-lg line-clamp-2 mb-2 text-gray-800">
+            {data.title}
+          </h3>
         </Link>
 
-        <div>
-          <Link href={`/shop/${redirectPath}/${data._id}`}>
-            <h3 className='text-2xl max-sm:text-xl font-extrabold text-white mb-5'>{data.title}</h3>
-          </Link>
-
-          <div className='mb-2'>
-          {data.price.map((price:any, i:number) => (
-            <div className="flex gap-2 items-baseline" key={i}>
-                <p className="font-extrabold text-white">{price.ct} {price.rate}</p>
-                <p className="old-rate font-light text-gray-300">{price.oldRate}</p>
-                <p className='text-gray-300 text-sm'>-30% OFF</p>
-            </div>       
+        <div className="space-y-1">
+          {data.price.map((price: Price, i: number) => (
+            <div className="flex items-baseline gap-2" key={i}>
+              <p className="font-bold text-gray-900">
+                <span className="emoji-font">{price.ct}</span>
+                {price.rate}
+              </p>
+              {price.oldRate && (
+                <p className="text-gray-500 line-through text-sm">
+                  {price.oldRate}
+                </p>
+              )}
+            </div>
           ))}
-          </div>
-
-            <Link href={`/shop/${redirectPath}/${data._id}`} className='text-white py-2.5 w-full bg-primary rounded-md block text-center'>Buy Now</Link>
-        
         </div>
+      </div>
 
+      <div className="px-4 pb-4">
+        <Link
+          href={`/shop/${redirectPath}/${data._id}`}
+          className="w-full inline-block transition-all duration-300 text-center py-2.5 px-4 rounded-md bg-rose-600 text-white hover:bg-rose-700 font-medium"
+        >
+          Buy Now
+        </Link>
+      </div>
     </div>
-  )
-}
+  );
+};

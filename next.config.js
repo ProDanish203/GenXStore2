@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    typescript: {
-        ignoreBuildErrors: true
-    },
-    images: {
-        domains: ['res.cloudinary.com']
-    }
-}
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
