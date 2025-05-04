@@ -31,8 +31,6 @@ export default function Home() {
             />
           ))}
         </div>
-        {/* <div className="grid md:grid-cols-2">
-          </div> */}
       </section>
     </main>
   );

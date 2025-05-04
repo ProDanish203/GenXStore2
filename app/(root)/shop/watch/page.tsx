@@ -9,12 +9,14 @@ const Watches = () => {
     queryFn: () => getProducts(),
   });
 
-  const menWatch = data ? data?.filter((x: any) => x.cat == "men-watch") : [];
-  const womenWatch = data
-    ? data?.filter((x: any) => x.cat == "women-watch")
+  const isValidData = Array.isArray(data);
+
+  const menWatch = isValidData ? data.filter((x) => x.cat === "men-watch") : [];
+  const womenWatch = isValidData
+    ? data.filter((x) => x.cat === "women-watch")
     : [];
-  const coupleWatch = data
-    ? data?.filter((x: any) => x.cat == "couple-watch")
+  const coupleWatch = isValidData
+    ? data.filter((x) => x.cat === "couple-watch")
     : [];
 
   return (

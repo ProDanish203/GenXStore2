@@ -10,7 +10,8 @@ const Watches = () => {
     queryFn: () => getProducts(),
   });
 
-  const jackets = data ? data?.filter((x: any) => x.cat == "jacket") : [];
+  const isValidData = Array.isArray(data);
+  const jackets = isValidData ? data.filter((x: any) => x.cat == "jacket") : [];
 
   return (
     <main className="px-[9%] mt-16 max-lg:px-[4%] py-5 pt-24">

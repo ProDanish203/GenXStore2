@@ -9,6 +9,17 @@ export const Hero = () => {
     queryKey: ["products"],
     queryFn: () => getProductbyId("6525c4ae87a155f3869342bb"),
   });
+
+  const imageSrc =
+    data && data.images && data.images.length > 0
+      ? data.images[0]
+      : "/images/watch-placeholder.jpg";
+
+  const price =
+    data && data.price && data.price.length > 0 && data.price[0].rate
+      ? data.price[0].rate
+      : "N/A";
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl shadow-lg my-8 mx-auto max-w-full">
       {/* Decorative elements */}
@@ -113,7 +124,7 @@ export const Hero = () => {
           <div className="relative overflow-hidden rounded-xl shadow-xl aspect-square transform transition-transform duration-500 hover:scale-[1.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-amber-100/40 to-transparent z-0"></div>
             <Image
-              src={data && data.images[0]}
+              src={imageSrc}
               alt="Luxury Watch"
               width={600}
               height={600}
@@ -122,9 +133,7 @@ export const Hero = () => {
             />
             <div className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-md z-20">
               <p className="text-sm font-medium text-gray-900">Trending</p>
-              <p className="text-lg font-bold text-rose-600">
-                ${data && data.price[0].rate}
-              </p>
+              <p className="text-lg font-bold text-rose-600">${price}</p>
             </div>
           </div>
         </div>
