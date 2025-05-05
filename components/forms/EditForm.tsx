@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { AlertCircle, Loader2, Save, Trash2 } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateProduct } from "@/app/axios/main";
+import { deleteProduct, updateProduct } from "@/app/axios/main";
 
 export const EditForm = ({ data }: any) => {
   const queryClient = useQueryClient();
@@ -27,6 +27,15 @@ export const EditForm = ({ data }: any) => {
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: updateProduct,
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["products"],
+      });
+    },
+  });
+
+  const { mutateAsync: deleteAsync, isPending: isDeletePending } = useMutation({
+    mutationFn: deleteProduct,
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["products"],
@@ -81,6 +90,26 @@ export const EditForm = ({ data }: any) => {
 
       if (res) {
         toast.success("Product updated successfully");
+        router.push("/admin");
+      } else {
+        const errorData = await res.json();
+        toast.error(errorData.message || "Something went wrong");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    try {
+      setLoading(true);
+      const res = await deleteAsync(id);
+
+      if (res) {
+        toast.success("Product deleted successfully");
         router.push("/admin");
       } else {
         const errorData = await res.json();
@@ -431,7 +460,7 @@ export const EditForm = ({ data }: any) => {
                     "Are you sure you want to delete this product? This action cannot be undone."
                   )
                 ) {
-                  console.log("Delete product:", data._id);
+                  handleDelete(data._id);
                 }
               }}
               className="sm:ml-auto bg-white border border-red-500 text-red-500 hover:bg-red-50 py-3 px-6 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center"

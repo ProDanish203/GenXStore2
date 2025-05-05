@@ -83,10 +83,10 @@ export const Footer = () => {
                     <Mail className="w-5 h-5 text-rose-600" />
                   </div>
                   <Link
-                    href="mailto:jawedh045@gmail.com"
+                    href="mailto:generationx.0515@gmail.com"
                     className="ml-3 text-gray-600 hover:text-rose-600 transition-colors"
                   >
-                    jawedh045@gmail.com
+                    generationx.0515@gmail.com
                   </Link>
                 </li>
               </ul>

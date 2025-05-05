@@ -119,7 +119,9 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
             <div className="border-t border-b border-gray-200 py-6 mb-6">
               <div className="flex items-start">
                 <ChevronRight className="h-5 w-5 text-rose-600 mt-0.5 flex-shrink-0" />
-                <p className="text-gray-700 ml-2">{data?.desc}</p>
+                <p className="whitespace-pre-wrap break-words text-gray-700 ml-2">
+                  {data?.desc}
+                </p>
               </div>
             </div>
 

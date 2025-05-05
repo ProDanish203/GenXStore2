@@ -6,7 +6,11 @@ export const revalidate = 1;
 export const GET = async (req: NextRequest) => {
   connectDb();
   try {
-    const product = await Product.find();
+    const { searchParams } = new URL(req.url);
+    const cat = searchParams.get("cat") || null;
+    const product = await Product.find({
+      ...(cat && { cat: cat }),
+    });
 
     if (!product)
       return new Response(`Failed to fetch products`, { status: 500 });

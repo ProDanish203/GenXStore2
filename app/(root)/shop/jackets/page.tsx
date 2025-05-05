@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 const Watches = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
-    queryFn: () => getProducts(),
+    queryFn: () => getProducts("jacket"),
   });
 
   const isValidData = Array.isArray(data);
@@ -18,7 +18,7 @@ const Watches = () => {
       <Banner
         heading="Leather Jackets Winter Collection is here"
         text="Introducing GenX Store 2's Winter Wonderland: Embrace the Chill in Style! Explore Our Latest Collection of Cozy and Trendy Winter Jackets. ❄️ Your Winter Wardrobe Upgrade Starts Here – Shop Now for the Hottest Looks to Keep You Cool in the Cold! 🧥"
-        image="/images/jackets/banner.jpg"
+        image="/images/banners/jacket.jpg"
       />
 
       <div className="lg:mt-40 mt-10">
