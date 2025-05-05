@@ -11,7 +11,7 @@ export const ProductForm = () => {
   const [formData, setFormData] = useState({
     title: "",
     desc: "",
-    cat: "jacket",
+    cat: "leather-gloves",
     usPrice: "",
     usOldPrice: "",
     gbpPrice: "",
@@ -92,7 +92,7 @@ export const ProductForm = () => {
         setFormData({
           title: "",
           desc: "",
-          cat: "jacket",
+          cat: "leather-gloves",
           usPrice: "",
           usOldPrice: "",
           gbpPrice: "",
@@ -207,6 +207,7 @@ export const ProductForm = () => {
                 <option value="women-watch">Women's watch</option>
                 <option value="couple-watch">Couple's watch</option>
                 <option value="jacket">Jacket</option>
+                <option value="leather-gloves">Leather gloves</option>
               </select>
             </div>
           </div>

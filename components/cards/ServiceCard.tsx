@@ -12,6 +12,7 @@ interface Price {
 }
 
 interface ServiceCardProps {
+  id: string;
   title: string;
   subtitle: string;
   image: string;
@@ -28,6 +29,7 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard = ({
+  id,
   title,
   subtitle,
   image,
@@ -44,6 +46,7 @@ export const ServiceCard = ({
 }: ServiceCardProps) => {
   return (
     <div
+      id={id}
       className={cn(
         "w-full overflow-hidden bg-white rounded-xl shadow-md border border-gray-100",
         className

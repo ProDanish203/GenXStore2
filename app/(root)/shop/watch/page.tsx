@@ -24,7 +24,7 @@ const Watches = () => {
       <Banner
         heading="Luxurious and affordable watches "
         text="At Gen X Store 2, we're your ultimate source for luxury and digital watches. Explore our curated collection to find your ideal timepiece, all backed by our Scamraud approval for a secure shopping experience. Elevate your wrist game with us today!"
-        image="/images/watch1/front.jpg"
+        image="/images/banners/watch.jpg"
       />
 
       <div className="lg:mt-40 mt-10">

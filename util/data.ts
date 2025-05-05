@@ -1,4 +1,5 @@
 export const facebookMonetizationService = {
+  id: "fb-monetization",
   title: "🤑💰 Ready to Monetize Your Facebook Content? 💰🤑",
   subtitle:
     "Unlock your earning potential with Facebook Monetization Service! 🚀",
@@ -48,6 +49,7 @@ export const facebookMonetizationService = {
 };
 
 export const youtubeMonetizationService = {
+  id: "yt-monetization",
   title: "🎥🤑 Unlock Your YouTube Earnings Potential Today! 🤑🎥",
   subtitle:
     "Are you a YouTube creator looking to turn your passion into profit? Look no further! Our YouTube Monetization Service is here to help you maximize your earnings effortlessly. 💰",
@@ -93,6 +95,7 @@ export const youtubeMonetizationService = {
 };
 
 export const netflixService = {
+  id: "netflix",
   title: "🎬🍿 Unlock a World of Entertainment with Netflix! 🍿🎬",
   subtitle:
     "We are providing netflix screen non-vpn. Ultra HD and has 100% replacement warranty",
@@ -108,6 +111,7 @@ export const netflixService = {
 };
 
 export const iptvService = {
+  id: "iptv",
   title: "🎬🍿 Unlock a World of Entertainment with IPTV Smarters Pro! 🍿🎬",
   subtitle:
     "Get hassle free service with our yearly and monthly packages that comes with greater discounts.",
